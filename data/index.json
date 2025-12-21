@@ -1,5 +1,6 @@
 {
   "pageSize": 20,
   "total": 900,
-  "totalPages": 45
+  "totalPages": 45,
+  "version":"1.0"
 }
