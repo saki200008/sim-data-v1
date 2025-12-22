@@ -17,6 +17,9 @@ const ds= []
 // const map_menh = {"M": "Mộc", "T":"Thổ", "H":"Hỏa", "TH":"Thuỷ", "K":"Kim"}
 const map_menh = {"Mộc":"M", "Thổ":"T", "Hỏa":"H", "Thuỷ":"TH", "Kim":"K"}
 sims.forEach(sim => {
+    if (sim.menh === "Hoả") {
+      sim.menh = "Hỏa"
+    }
     const ds_ob = {
         "ma": sim.mang,
         "g":sim.gia,
