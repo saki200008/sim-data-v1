@@ -20,6 +20,9 @@ sims.forEach(sim => {
     if (sim.menh === "Hoả") {
       sim.menh = "Hỏa"
     }
+    if (sim.menh === "Thủy") {
+      sim.menh = "Thuỷ"
+    }
     const ds_ob = {
         "ma": sim.mang,
         "g":sim.gia,
@@ -49,11 +52,19 @@ fs.writeFileSync(
   }, null, 2)
 );
 
-// chia page
+// chia page 1
 for (let i = 0; i < totalPages; i++){
   const pageData = ds.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE);
   fs.writeFileSync(
     `${OUTPUT_DIR}/page_${i + 1}.json`,
+    JSON.stringify(pageData)
+  );
+}
+// chia page 10
+for (let i = 0; i < totalPages; i++){
+  const pageData = ds.slice(i * 200, (i + 1) * 200);
+  fs.writeFileSync(
+    `${OUTPUT_DIR}/page200_${i + 1}.json`,
     JSON.stringify(pageData)
   );
 }
